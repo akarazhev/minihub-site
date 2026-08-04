@@ -7,10 +7,13 @@ commit is a deploy.
 
 ## Deployment
 
-Cloudflare Pages, connected to this repository.
+Cloudflare Workers static assets, connected to this repository. A push to
+`main` deploys.
 
 - Build command: none
-- Output directory: repository root
+- Assets directory: repository root, configured in `wrangler.toml`
+- `not_found_handling = "404-page"` so `404.html` is served for unknown paths
+- `.assetsignore` keeps config and docs out of the served site
 - Custom domain: `minihub.app` (apex), `www` redirects to it
 
 ## The one rule
