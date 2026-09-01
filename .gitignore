@@ -1,4 +1,6 @@
 .DS_Store
 .idea/
 .vscode/
+.wrangler/
 *.swp
+node_modules/
