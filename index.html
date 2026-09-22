@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MiniHub — small, focused analytics products for crypto markets</title>
-<meta name="description" content="MiniHub builds narrow analytics products for crypto markets. Each product answers one question from market or on-chain data.">
+<title>MiniHub — published work: surveys, diagnoses and the data behind them</title>
+<meta name="description" content="Published work by Andrey Karazhev: surveys of how data fails between systems, diagnoses in other people&#39;s code, and small analytics products. Each piece ships with the code that produced it and the data it ran on.">
 <link rel="canonical" href="https://minihub.app/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MiniHub">
 <meta property="og:url" content="https://minihub.app/">
-<meta property="og:title" content="MiniHub — small, focused analytics products for crypto markets">
-<meta property="og:description" content="MiniHub builds narrow analytics products for crypto markets. Each product answers one question from market or on-chain data.">
+<meta property="og:title" content="MiniHub — published work: surveys, diagnoses and the data behind them">
+<meta property="og:description" content="Published work by Andrey Karazhev: surveys of how data fails between systems, diagnoses in other people&#39;s code, and small analytics products. Each piece ships with the code that produced it and the data it ran on.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiniHub — small, focused analytics products for crypto markets">
-<meta name="twitter:description" content="MiniHub builds narrow analytics products for crypto markets. Each product answers one question from market or on-chain data.">
+<meta name="twitter:title" content="MiniHub — published work: surveys, diagnoses and the data behind them">
+<meta name="twitter:description" content="Published work by Andrey Karazhev: surveys of how data fails between systems, diagnoses in other people&#39;s code, and small analytics products. Each piece ships with the code that produced it and the data it ran on.">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -22,8 +22,8 @@
 
   <header>
     <h1>MiniHub</h1>
-    <p class="lede">Small, focused analytics products for crypto markets.</p>
-    <p>Each product answers one question from market or on-chain data, and stays a standalone product rather than a module of a platform.</p>
+    <p class="lede">Published work: surveys, diagnoses and the data behind them.</p>
+    <p>Each piece ships with the code that produced it and the data it ran on — a disagreement should be with a rule you can read, not a figure you have to believe.</p>
     <p class="byline">Published by Andrey Karazhev — backend and distributed
     systems, 19 years. Data in motion: parsing, transfer, reconciliation,
     analytics. <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
@@ -49,6 +49,31 @@
       <h3>Who notices when a price feed goes wrong</h3>
       <p>1,163 commits that repair feed handling across 48 crypto organisations. In three of five repositories the same fault came back, and the work splits cleanly by role: reconnect is a consumer problem, heartbeat a publisher one.</p>
       <span class="project-url">github.com/akarazhev/price-feed-failure-survey</span>
+    </a>
+  </section>
+
+  <section>
+    <h2>Diagnoses</h2>
+    <p>Reading unfamiliar code until the mechanism is named, with line references and, where possible, a test that shows it.</p>
+    <a class="project" href="https://github.com/numaproj/numaflow/issues/3645">
+      <h3>A watermark that stops moving</h3>
+      <p>An accumulator watermark never advances when a key keeps receiving data and the function emits nothing for it. Verified with a test against the Rust core; the team revisited the design and restored the drop API in four SDKs.</p>
+      <span class="project-url">numaproj/numaflow#3645</span>
+    </a>
+    <a class="project" href="https://github.com/nats-io/nats-server/issues/8607">
+      <h3>Why adding a stream source scans everything</h3>
+      <p>What <code>opt_start_time</code> actually applies to, where the scan floor comes from, and what does bound the scan. Checked against the reporter&#39;s own version rather than main.</p>
+      <span class="project-url">nats-io/nats-server#8607</span>
+    </a>
+    <a class="project" href="https://github.com/ccxt/ccxt/issues/26773">
+      <h3>A balance update lost, not delayed</h3>
+      <p><code>deepExtend</code> builds a new object, so the update never reaches the subscriber holding the old one.</p>
+      <span class="project-url">ccxt/ccxt#26773</span>
+    </a>
+    <a class="project" href="https://github.com/QuantConnect/Lean/issues/9790">
+      <h3>Three of eight sends off the result thread</h3>
+      <p>Counted by reading every call site rather than the one in the stack trace.</p>
+      <span class="project-url">QuantConnect/Lean#9790</span>
     </a>
   </section>
 
