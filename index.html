@@ -75,6 +75,12 @@
       <p>Counted by reading every call site rather than the one in the stack trace.</p>
       <span class="project-url">QuantConnect/Lean#9790</span>
     </a>
+    <a class="project" href="https://github.com/OCA/queue/issues/996">
+      <h3>A job that forgets which method it was asked to run</h3>
+      <p>Odoo&#39;s <code>queue_job</code> recorded the <code>__name__</code> of the function it found, not the name it was asked for, so a module that installs a replacement under another name, as auditlog does for <code>write</code> and <code>unlink</code>, breaks the job when it runs. The name was lost in four places; the fix and three tests are in #998.</p>
+      <span class="project-url">OCA/queue#996</span>
+    </a>
+    <a class="badge" href="https://github.com/OCA/queue/pull/998"><img src="/oca-contributor.png" alt="OCA Contributor" width="120" height="59"></a>
   </section>
 
   <section>

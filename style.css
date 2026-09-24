@@ -110,6 +110,15 @@ code {
   margin-top: 1.75rem;
 }
 
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.badge img {
+  display: block;
+}
+
 .project-url {
   font-size: 0.9rem;
   color: var(--muted);
