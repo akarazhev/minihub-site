@@ -29,9 +29,9 @@
     <h1>MiniHub</h1>
     <p class="lede">Published work: surveys, diagnoses and the data behind them.</p>
     <p>Each piece ships with the code that produced it and the data it ran on — a disagreement should be with a rule you can read, not a figure you have to believe.</p>
-    <p class="byline">Published by Andrey Karazhev — backend and distributed
-    systems, 19 years. Data in motion: parsing, transfer, reconciliation,
-    analytics. <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
+    <p class="byline">Published by Andrey Karazhev — data integration and
+    reconciliation; backend and distributed systems, 19 years.
+    <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
   </header>
 
   <section>
@@ -58,12 +58,31 @@
   </section>
 
   <section>
-    <h2>Diagnoses</h2>
+    <h2>Writing</h2>
+    <a class="project" href="https://dev.to/akarazhev/why-a-numaflow-watermark-wouldnt-move-287m">
+      <h3>A watermark that wouldn&rsquo;t move</h3>
+      <p>The numaflow case below, step by step: following a state clean-up condition through the code and checking it with a test.</p>
+      <span class="project-url">dev.to/akarazhev</span>
+    </a>
+  </section>
+
+  <section>
+    <h2>Fixes and diagnoses</h2>
     <p>Reading unfamiliar code until the mechanism is named, with line references and, where possible, a test that shows it.</p>
+    <a class="project" href="https://github.com/nats-io/nats-server/pull/8671">
+      <h3>MQTT delivery that stopped after a reload</h3>
+      <p>When <code>max_ack_pending</code> was not set, a configuration reload left open MQTT sessions with a limit of zero, and QoS 1 and 2 delivery stopped. The fix and a regression test were merged less than two hours after the pull request was opened.</p>
+      <span class="project-url">nats-io/nats-server#8671</span>
+    </a>
     <a class="project" href="https://github.com/numaproj/numaflow/issues/3645">
       <h3>A watermark that stops moving</h3>
       <p>An accumulator watermark never advances when a key keeps receiving data and the function emits nothing for it. Verified with a test against the Rust core; the team revisited the design, restored the drop API in four SDKs, and merged the documentation fix in #3660.</p>
       <span class="project-url">numaproj/numaflow#3645</span>
+    </a>
+    <a class="project" href="https://github.com/nats-io/nats-server/pull/8691">
+      <h3>A stalled restore reported like any other failure</h3>
+      <p>A stalled stream restore returned before the restore had stopped and without the completion advisory other failed restores send. The change and a test are in review.</p>
+      <span class="project-url">nats-io/nats-server#8691</span>
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/issues/8607">
       <h3>Why adding a stream source scans everything</h3>
