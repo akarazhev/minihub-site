@@ -30,7 +30,8 @@
     <p class="lede">Published work: surveys, diagnoses and the data behind them.</p>
     <p>Each piece ships with the code that produced it and the data it ran on — a disagreement should be with a rule you can read, not a figure you have to believe.</p>
     <p class="byline">Published by Andrey Karazhev — data integration and
-    reconciliation; backend and distributed systems, 19 years.
+    reconciliation, including data written by automation and AI; backend and
+    data systems, 19 years.
     <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
   </header>
 
@@ -81,7 +82,7 @@
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/pull/8691">
       <h3>A stalled restore reported like any other failure</h3>
-      <p>A stalled stream restore returned before the restore had stopped and without the completion advisory other failed restores send. The change and a test are in review.</p>
+      <p>A stalled stream restore returned before the restore had stopped and without the completion advisory other failed restores send. The change and a test are approved by a maintainer and wait to be merged.</p>
       <span class="project-url">nats-io/nats-server#8691</span>
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/issues/8607">
@@ -103,6 +104,11 @@
       <h3>A job that forgets which method it was asked to run</h3>
       <p>Odoo&#39;s <code>queue_job</code> recorded the <code>__name__</code> of the function it found, not the name it was asked for, so a module that installs a replacement under another name, as auditlog does for <code>write</code> and <code>unlink</code>, breaks the job when it runs. The name was lost in four places; the fix and three tests are in #998.</p>
       <span class="project-url">OCA/queue#996</span>
+    </a>
+    <a class="project" href="https://github.com/OCA/edi/issues/1423#issuecomment-5995142801">
+      <h3>A PDF invoice import that drops amounts</h3>
+      <p>Odoo&#39;s PDF invoice import dropped a total printed with one decimal and turned an integer into hundredths, without an error. Checked by running the conversion against the module&#39;s own test cases and sample invoice: the proposed fix changes none of them, while making the decimals optional would let a fragment of the VAT number beat any smaller total under the <code>max</code> rule.</p>
+      <span class="project-url">OCA/edi#1423</span>
     </a>
     <a class="badge" href="https://github.com/OCA/queue/pull/998"><img src="/oca-contributor.png" alt="OCA Contributor" width="120" height="59"></a>
   </section>
