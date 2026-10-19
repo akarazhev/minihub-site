@@ -29,9 +29,8 @@
     <h1>MiniHub</h1>
     <p class="lede">Published work: surveys, diagnoses and the data behind them.</p>
     <p>Each piece ships with the code that produced it and the data it ran on — a disagreement should be with a rule you can read, not a figure you have to believe.</p>
-    <p class="byline">Published by Andrey Karazhev — data integration and
-    reconciliation, including data written by automation and AI; backend and
-    data systems, 19 years.
+    <p class="byline">Published by Andrey Karazhev — data integration,
+    migration and data quality; backend and data systems, 19 years.
     <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
   </header>
 
@@ -119,6 +118,11 @@
       <h3>A PDF invoice import that drops amounts</h3>
       <p>Odoo&#39;s PDF invoice import dropped a total printed with one decimal and turned an integer into hundredths, without an error. Checked by running the conversion against the module&#39;s own test cases and sample invoice: the proposed fix changes none of them, while making the decimals optional would let a fragment of the VAT number beat any smaller total under the <code>max</code> rule.</p>
       <span class="project-url">OCA/edi#1423</span>
+    </a>
+    <a class="project" href="https://github.com/akretion/factur-x/pull/96">
+      <h3>An e-invoice check that raised the wrong error</h3>
+      <p><code>get_level()</code> raised <code>IndexError</code> instead of its own <code>ValueError</code> on a <code>CustomizationID</code> without <code>:</code>, as a Belgian e-fff invoice carries. Merged an hour after it was opened and released in factur-x 7.7; the library parses the invoices that Odoo&#39;s OCA import reads.</p>
+      <span class="project-url">akretion/factur-x#96</span>
     </a>
     <a class="badge" href="https://github.com/OCA/queue/pull/998"><img src="/oca-contributor.png" alt="OCA Contributor" width="120" height="59"></a>
   </section>
