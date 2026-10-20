@@ -27,10 +27,9 @@
 
   <header>
     <h1>MiniHub</h1>
-    <p class="lede">Published work: surveys, diagnoses and the data behind them.</p>
-    <p>Each piece ships with the code that produced it and the data it ran on — a disagreement should be with a rule you can read, not a figure you have to believe.</p>
-    <p class="byline">Published by Andrey Karazhev — data integration,
-    migration and data quality; backend and data systems, 19 years.
+    <p class="lede">Published work: a demo, surveys and fixes in other people&rsquo;s code, each with the code and data behind it.</p>
+    <p class="byline">Published by Andrey Karazhev. I work on data integration, migration and data quality;
+    19 years of backend and data systems.
     <a href="https://github.com/akarazhev">github.com/akarazhev</a></p>
   </header>
 
@@ -52,12 +51,12 @@
     <h2>Research</h2>
     <a class="project" href="https://github.com/akarazhev/dao-funding-survey">
       <h3>What DAOs actually fund</h3>
-      <p>A survey of 93 funding proposals across 29 governance forums: what gets funded, for how much, and through which channel. The data and the code that produced it are included, so every number can be checked against its source thread.</p>
+      <p>93 funding proposals across 29 governance forums: what gets funded, for how much and through which channel.</p>
       <span class="project-url">github.com/akarazhev/dao-funding-survey</span>
     </a>
     <a class="project" href="https://github.com/akarazhev/price-feed-failure-survey">
       <h3>Who notices when a price feed goes wrong</h3>
-      <p>1,163 commits matching six feed-failure terms across 48 crypto organisations. A hand check of 100 diffs found about one in six is an actual repair &mdash; the rest is documentation, CI and &ldquo;stale&rdquo; in its other meanings. The correction and every classification are in the repository.</p>
+      <p>1,163 commits across 48 crypto organisations; a hand check found that about one in six is a real repair.</p>
       <span class="project-url">github.com/akarazhev/price-feed-failure-survey</span>
     </a>
   </section>
@@ -66,37 +65,37 @@
     <h2>Writing</h2>
     <a class="project" href="https://dev.to/akarazhev/why-stripe-payouts-dont-match-your-books-3aoa">
       <h3>Why Stripe payouts don&rsquo;t match your books</h3>
-      <p>The reconciliation demo&rsquo;s synthetic Stripe month, walked from the ledger to the bank: a &euro;3,496.99 gap, 96% of it a payout that crossed month-end, and &euro;1,219.81 of differences that net to only &euro;149.21.</p>
+      <p>A made-up Stripe month walked from the ledger to the bank: a &euro;3,496.99 gap, 96% of it one payout that crossed month-end.</p>
       <span class="project-url">dev.to/akarazhev</span>
     </a>
     <a class="project" href="https://dev.to/akarazhev/why-a-numaflow-watermark-wouldnt-move-287m">
       <h3>A watermark that wouldn&rsquo;t move</h3>
-      <p>The numaflow case below, step by step: following a state clean-up condition through the code and checking it with a test.</p>
+      <p>The numaflow case below, step by step: following a clean-up condition through the code and checking it with a test.</p>
       <span class="project-url">dev.to/akarazhev</span>
     </a>
   </section>
 
   <section>
     <h2>Fixes and diagnoses</h2>
-    <p>Reading unfamiliar code until the mechanism is named, with line references and, where possible, a test that shows it.</p>
+    <p>I read unfamiliar code until I can name the mechanism, and add a test where I can.</p>
     <a class="project" href="https://github.com/nats-io/nats-server/pull/8671">
       <h3>MQTT delivery that stopped after a reload</h3>
-      <p>When <code>max_ack_pending</code> was not set, a configuration reload left open MQTT sessions with a limit of zero, and QoS 1 and 2 delivery stopped. The fix and a regression test were merged less than two hours after the pull request was opened.</p>
+      <p>A config reload quietly stopped MQTT delivery. Merged less than two hours after the PR was opened.</p>
       <span class="project-url">nats-io/nats-server#8671</span>
     </a>
     <a class="project" href="https://github.com/numaproj/numaflow/issues/3645">
       <h3>A watermark that stops moving</h3>
-      <p>An accumulator watermark never advances when a key keeps receiving data and the function emits nothing for it. Verified with a test against the Rust core; the team revisited the design, restored the drop API in four SDKs, and merged the documentation fix in #3660.</p>
+      <p>Why a watermark stopped moving; the team kept the design and merged my docs fix in #3660.</p>
       <span class="project-url">numaproj/numaflow#3645</span>
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/pull/8691">
       <h3>A stalled restore reported like any other failure</h3>
-      <p>A stalled stream restore returned before the restore had stopped and without the completion advisory other failed restores send. The change and a test are approved by a maintainer and wait to be merged.</p>
+      <p>A stalled stream restore now reports like other failed restores. Approved.</p>
       <span class="project-url">nats-io/nats-server#8691</span>
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/issues/8607">
       <h3>Why adding a stream source scans everything</h3>
-      <p>What <code>opt_start_time</code> actually applies to, where the scan floor comes from, and what does bound the scan. Checked against the reporter&#39;s own version rather than main.</p>
+      <p>What <code>opt_start_time</code> really applies to, and what bounds the scan.</p>
       <span class="project-url">nats-io/nats-server#8607</span>
     </a>
     <a class="project" href="https://github.com/ccxt/ccxt/issues/26773">
@@ -111,17 +110,17 @@
     </a>
     <a class="project" href="https://github.com/OCA/queue/issues/996">
       <h3>A job that forgets which method it was asked to run</h3>
-      <p>Odoo&#39;s <code>queue_job</code> recorded the <code>__name__</code> of the function it found, not the name it was asked for, so a module that installs a replacement under another name, as auditlog does for <code>write</code> and <code>unlink</code>, breaks the job when it runs. The name was lost in four places; the fix and three tests are in #998.</p>
+      <p>Odoo jobs lost the name of the method they were asked to run. The fix and three tests are in #998.</p>
       <span class="project-url">OCA/queue#996</span>
     </a>
     <a class="project" href="https://github.com/OCA/edi/issues/1423#issuecomment-5995142801">
       <h3>A PDF invoice import that drops amounts</h3>
-      <p>Odoo&#39;s PDF invoice import dropped a total printed with one decimal and turned an integer into hundredths, without an error. Checked by running the conversion against the module&#39;s own test cases and sample invoice: the proposed fix changes none of them, while making the decimals optional would let a fragment of the VAT number beat any smaller total under the <code>max</code> rule.</p>
+      <p>Odoo&#39;s PDF invoice import silently dropped some amounts; checked against the module&#39;s own test invoices.</p>
       <span class="project-url">OCA/edi#1423</span>
     </a>
     <a class="project" href="https://github.com/akretion/factur-x/pull/96">
       <h3>An e-invoice check that raised the wrong error</h3>
-      <p><code>get_level()</code> raised <code>IndexError</code> instead of its own <code>ValueError</code> on a <code>CustomizationID</code> without <code>:</code>, as a Belgian e-fff invoice carries. Merged an hour after it was opened and released in factur-x 7.7; the library parses the invoices that Odoo&#39;s OCA import reads.</p>
+      <p>The wrong exception on Belgian e-invoices. Merged within about an hour, released in factur-x 7.7.</p>
       <span class="project-url">akretion/factur-x#96</span>
     </a>
     <a class="badge" href="https://github.com/OCA/queue/pull/998"><img src="/oca-contributor.png" alt="OCA Contributor" width="120" height="59"></a>
