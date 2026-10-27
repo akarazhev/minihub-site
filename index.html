@@ -42,7 +42,7 @@
     </a>
     <a class="project" href="https://reconciliation.minihub.app">
       <h3>Money reconciliation demo</h3>
-      <p>Ledger, platform payouts and bank reconciled to the cent for three made-up companies (EU web shop · Stripe, Ozon, Wildberries): every discrepancy found by SQL, with its cause and amount.</p>
+      <p>Ledger, platform payouts and bank reconciled to the cent for three made-up companies (EU web shop · Stripe, Ozon, Wildberries): every discrepancy found by SQL, with its cause and amount. The Stripe shop also closes a second month.</p>
       <span class="project-url">reconciliation.minihub.app</span>
     </a>
   </section>
@@ -63,6 +63,11 @@
 
   <section>
     <h2>Writing</h2>
+    <a class="project" href="https://dev.to/akarazhev/stripe-reconciliation-carrying-september-into-october-2743">
+      <h3>Stripe reconciliation: carrying September into October</h3>
+      <p>The same shop a month later: what is still open on 31 October comes from September&rsquo;s unfixed errors, a refund at a new rate and a dispute won.</p>
+      <span class="project-url">dev.to/akarazhev</span>
+    </a>
     <a class="project" href="https://dev.to/akarazhev/why-stripe-payouts-dont-match-your-books-3aoa">
       <h3>Why Stripe payouts don&rsquo;t match your books</h3>
       <p>A made-up Stripe month walked from the ledger to the bank: a &euro;3,496.99 gap, 96% of it one payout that crossed month-end.</p>
@@ -90,8 +95,23 @@
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/pull/8691">
       <h3>A stalled restore reported like any other failure</h3>
-      <p>A stalled stream restore now reports like other failed restores. Approved.</p>
+      <p>A stalled stream restore now reports like other failed restores. Merged.</p>
       <span class="project-url">nats-io/nats-server#8691</span>
+    </a>
+    <a class="project" href="https://github.com/apache/airflow/pull/75425">
+      <h3>A Snowflake transaction lost to session parameters</h3>
+      <p>The hook skipped its final commit when session parameters were set. Merged less than two hours after the PR was opened.</p>
+      <span class="project-url">apache/airflow#75425</span>
+    </a>
+    <a class="project" href="https://github.com/frappe/erpnext/issues/62390">
+      <h3>An asset that could be submitted at any value</h3>
+      <p>The check against the purchase receipt no longer worked. The fix and a test are on a branch linked in the issue.</p>
+      <span class="project-url">frappe/erpnext#62390</span>
+    </a>
+    <a class="project" href="https://github.com/dbt-labs/dbt/issues/16807#issuecomment-6289878718">
+      <h3>Tests dropped by indirect selection</h3>
+      <p>dbt&rsquo;s buildable selection left out every test that reads a seed outside the selection. A PR is open (#16819).</p>
+      <span class="project-url">dbt-labs/dbt#16807</span>
     </a>
     <a class="project" href="https://github.com/nats-io/nats-server/issues/8607">
       <h3>Why adding a stream source scans everything</h3>
